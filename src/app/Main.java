@@ -23,10 +23,8 @@ public class Main {
                 System.out.print("Source: ");
                 ChessPosition source = UI.readChessPosition(sc);
 
-                System.out.println("Passou aqui =========");
                 boolean[][] possibleMoves = chessMatch.possibleMoves(source);
 
-                System.out.println("Passou aqui2 =========");
                 UI.clearScreen();
                 UI.printBoard(chessMatch.getPieces(), possibleMoves);
 
