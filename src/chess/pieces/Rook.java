@@ -23,41 +23,41 @@ public class Rook extends ChessPiece {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
         Position cursor = new Position(0, 0);
 
-        //Up
+        // above
         cursor.setValues(position.getRow() - 1, position.getColumn());
         while (getBoard().positionExists(cursor) && !getBoard().thereIsAPiece(cursor)) {
             mat[cursor.getRow()][cursor.getColumn()] = true;
-            cursor.setRow(position.getRow() - 1);
+            cursor.setRow(cursor.getRow() - 1);
         }
         if (getBoard().positionExists(cursor) && isThereOpponentPiece(cursor)) {
             mat[cursor.getRow()][cursor.getColumn()] = true;
         }
 
-        //Left
+        // left
         cursor.setValues(position.getRow(), position.getColumn() - 1);
         while (getBoard().positionExists(cursor) && !getBoard().thereIsAPiece(cursor)) {
             mat[cursor.getRow()][cursor.getColumn()] = true;
-            cursor.setColumn(position.getColumn() - 1);
+            cursor.setColumn(cursor.getColumn() - 1);
         }
         if (getBoard().positionExists(cursor) && isThereOpponentPiece(cursor)) {
             mat[cursor.getRow()][cursor.getColumn()] = true;
         }
 
-        //Right
+        // right
         cursor.setValues(position.getRow(), position.getColumn() + 1);
         while (getBoard().positionExists(cursor) && !getBoard().thereIsAPiece(cursor)) {
             mat[cursor.getRow()][cursor.getColumn()] = true;
-            cursor.setColumn(position.getColumn() + 1);
+            cursor.setColumn(cursor.getColumn() + 1);
         }
         if (getBoard().positionExists(cursor) && isThereOpponentPiece(cursor)) {
             mat[cursor.getRow()][cursor.getColumn()] = true;
         }
 
-        //Down
+        // below
         cursor.setValues(position.getRow() + 1, position.getColumn());
         while (getBoard().positionExists(cursor) && !getBoard().thereIsAPiece(cursor)) {
             mat[cursor.getRow()][cursor.getColumn()] = true;
-            cursor.setRow(position.getRow() + 1);
+            cursor.setRow(cursor.getRow() + 1);
         }
         if (getBoard().positionExists(cursor) && isThereOpponentPiece(cursor)) {
             mat[cursor.getRow()][cursor.getColumn()] = true;
